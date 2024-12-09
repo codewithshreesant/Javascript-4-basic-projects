@@ -1,0 +1,29 @@
+<script>
+    // console.log("This is javascript practice file")
+
+    let mysym=Symbol('this is symbol');
+
+    let  details={
+        name:"Shreesant",
+        age:20,
+        hobby:"Coding",
+        "full name":"Tushant Adhikari",
+        [mysym]:"this is updated  symbol"
+    }
+
+    // console.log(details);
+    console.log(details.name)
+    console.log(details.age)
+    console.log(details.hobby)
+    console.log(details["full name"]);
+    // console.log(details.mysym)
+    // console.log(details[mysym])
+    console.log(details)
+
+    Object.freeze(details)
+    details.name="bil trey"
+    console.log(details)
+
+    
+
+</script>
