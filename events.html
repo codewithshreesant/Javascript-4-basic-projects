@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .divs{
+            background-color: aqua;  height: 15vh
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div id="div1" class="divs"  width: 16vw;">
+
+        </div>
+        <div id="div2" class="divs" style="background-color: lightgreen;">
+
+        </div>
+        <div  id="div3" class="divs" style="background-color: blueviolet;">
+
+        </div>
+    </div>
+</body>
+<script>
+    // document.getElementById('div1').onclick=function(){
+    //     alert("This is  event of onclick selected by id")
+    // }
+
+    // type, timestamp, defaultPrevented
+    // target, toElment, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY -> Interview Important
+    // altKey, ctrlKey, shiftKey,  keyCode
+
+    // Event Propagation
+
+    // i) Event public
+    // i) Event capturing
+
+    // bubbbling -> bottom to top
+    // capturing -> top to bottom
+
+    // document.getElementsByClassName('container')[0].addEventListener('click', function(e){
+    //     console.log("Container is clicked");
+    // }, true) // -> true is capturing mode
+
+    // document.getElementById('div1').addEventListener('click', function(e){
+    //     console.log("Div 1 clicked")
+    // }, false)//-> false bubbling  mode 
+
+    // document.getElementsByClassName('container')[0].addEventListener('click', function(e){
+    //     console.log("Container is clicked");
+    // }, true) 
+
+    // document.getElementById('div1').addEventListener('click', function(e){
+    //     console.log("Div 1 clicked")
+    //     e.stopPropagation()
+    // }, true)
+
+    // document.getElementById('div1').addEventListener('click', function(e){
+    //     console.log(e.target.parentNode);
+    // }, false)
+
+    const divs=document.querySelectorAll('.divs');
+    Array.from(divs).map((cont, index)=>{
+        cont.addEventListener('click',  function(e){
+            let ele=e.target;
+            // console.log(remove);
+            ele.remove();
+
+        })
+    })
+
+
+</script>
+</html>
